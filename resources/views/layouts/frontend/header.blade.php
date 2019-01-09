@@ -51,7 +51,7 @@
                     @else
 
                         <li class="nav-item">
-                            <a class="btn btn-default ro-co log-in-user" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a class="btn btn-default ro-co log-in-user" href="{{ route('myaccount') }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 Hello! <strong>{{ Auth::user()->name }} </strong>
                             </a>
                         </li>

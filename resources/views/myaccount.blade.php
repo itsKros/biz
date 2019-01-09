@@ -1,7 +1,7 @@
 @extends('layouts.frontend.master')
 
 @section('content')
-<div class="container">
+<div class="container p-5">
         @if(\Session::has('error'))
         <div class="alert alert-danger">
         {{\Session::get('error')}}
@@ -10,7 +10,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">My Account</div>
 
                 <div class="card-body">
                     @if (session('status'))
