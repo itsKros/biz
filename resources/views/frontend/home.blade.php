@@ -12,16 +12,15 @@
                 <div class="card-body text-white text-center py-5 px-5 my-5">
 
                     <h1 class="mb-4">
-                        <strong>Learn Bootstrap 4 with MDB</strong>
+                        <strong>Biz Work</strong>
                     </h1>
                     <p>
-                        <strong>Best & free guide of responsive web design</strong>
+                        <strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit?</strong>
                     </p>
                     <p class="mb-4">
-                        <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000 users. Video and written
-                            versions available. Create your own, stunning website.</strong>
+                        <strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut saepe repellendus impedit earum libero fugit officiis eligendi quidem magnam consectetur!</strong>
                     </p>
-                    <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/" class="btn btn-outline-white btn-lg">Start free tutorial
+                    <a target="_blank" href="#" class="btn btn-outline-white btn-lg">Contact Us
                         <i class="fas fa-graduation-cap ml-2"></i>
                     </a>
 

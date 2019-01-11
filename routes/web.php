@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.home');
-});
+
+
+Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/my-account', 'HomeController@index')->name('myaccount');
-Route::get('/admin', 'HomeController@admin')->middleware('admin');
+Route::get('/my-account', 'HomeController@myaccount')->name('myaccount');
+Route::get('/admin', 'AdminController@index')->middleware('admin');
