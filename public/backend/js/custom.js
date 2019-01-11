@@ -7,7 +7,7 @@ File: js
 $(function() {
     "use strict";
     $(function() {
-        $(".preloader").fadeOut();
+       // $(".preloader").fadeOut();
     });
 
     // ============================================================== 
