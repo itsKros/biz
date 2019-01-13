@@ -16,6 +16,7 @@
 Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
+Route::resource('listings','ListingsController');
 
-Route::get('/my-account', 'HomeController@myaccount')->name('myaccount');
+Route::get('/my-account', 'HomeController@myaccount')->name('my-account');
 Route::get('/admin', 'AdminController@index')->middleware('admin');

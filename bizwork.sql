@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 08, 2019 at 04:56 AM
+-- Generation Time: Jan 13, 2019 at 07:30 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -25,6 +25,33 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `listings`
+--
+
+CREATE TABLE `listings` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `website` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `bio` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `listings`
+--
+
+INSERT INTO `listings` (`id`, `user_id`, `name`, `address`, `website`, `email`, `phone`, `bio`, `created_at`, `updated_at`) VALUES
+(1, 2, 'Brian Creative Soft', '232  Russell Street, Framingham, MA', 'http://example.com', 'briancs@mail.com', '978-899-1433', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', NULL, NULL),
+(2, 3, 'Jon Solutions', '80 Ketch Harbour Ave. \r\nPark Ridge, IL 60068', 'http://example.org', 'jsolutions@mail.com', '202-555-0166', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -40,7 +67,8 @@ CREATE TABLE `migrations` (
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
-(2, '2014_10_12_100000_create_password_resets_table', 1);
+(2, '2014_10_12_100000_create_password_resets_table', 1),
+(3, '2019_01_13_170035_create_listings_table', 2);
 
 -- --------------------------------------------------------
 
@@ -77,12 +105,19 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `isAdmin`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@admin.com', NULL, 1, '$2y$10$F4LE9phb0oBGtGhrp.WauuRs0bjKZJr/va22r.hkmXEvWmOcjLzqy', 'o3v0cnUFlqZsJHYApGYlRi3sHjcFeumqzx70XhfLZJaNumn6k2auyiM3YMRi', '2019-01-05 11:59:36', '2019-01-05 11:59:36'),
-(2, 'user', 'user@user.com', NULL, NULL, '$2y$10$i7GnlRKfQ.HSSUnbfR/cj.39eeBEfkk2okrU8bU/KBDbeSjiNXtjC', 'oPs31TudkDuR9lGlifZ2CzuKCMPqxDZcDbKilyjIjaxc9dOB4X17uWkLLXp7', '2019-01-05 12:03:00', '2019-01-05 12:03:00');
+(1, 'admin', 'admin@admin.com', NULL, 1, '$2y$10$F4LE9phb0oBGtGhrp.WauuRs0bjKZJr/va22r.hkmXEvWmOcjLzqy', 'VeGmf6IfOykyqkWag3yzKnHsg5suWbOL1lYL9i9qzLXMxCO2yzhMY6uopSNv', '2019-01-05 11:59:36', '2019-01-05 11:59:36'),
+(2, 'Brian Fury', 'brian@mail.com', NULL, NULL, '$2y$10$i7GnlRKfQ.HSSUnbfR/cj.39eeBEfkk2okrU8bU/KBDbeSjiNXtjC', 'No6j1WDgn4fogXzJcSiCnM9Knfo3o1YcvtUW4nFkrRRP1KxTJsC2lr7SwuLu', '2019-01-05 12:03:00', '2019-01-05 12:03:00'),
+(3, 'Jon Doe', 'jon@mail.com', NULL, NULL, '$2y$10$//K/w/E9joPwVerqmUgqeu/BtnE3kQFEDYP0z876Yl9bZs8LeuQ.q', 'RgAtQzscHHmP3i4N0ZmSE0pnFFoCKNt65JQJw5gORvsHl46DTA7AaGGi90Ag', '2019-01-13 11:58:59', '2019-01-13 11:58:59');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `listings`
+--
+ALTER TABLE `listings`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `migrations`
@@ -108,16 +143,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `listings`
+--
+ALTER TABLE `listings`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

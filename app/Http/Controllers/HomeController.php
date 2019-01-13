@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\User;
 class HomeController extends Controller
 {
    
@@ -21,11 +21,11 @@ class HomeController extends Controller
 
     public function myaccount()
     {
-        return view('frontend.myaccount');
+        $user_id = auth()->user()->id;
+        $user = User::find($user_id);
+        
+        return view('frontend.myaccount')->with('listings', $user->listings);
     }
 
-    public function admin()
-    {
-        return view('backend.admin');
-    }
+    
 }

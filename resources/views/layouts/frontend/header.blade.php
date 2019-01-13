@@ -1,12 +1,12 @@
 <!--Main Navigation-->
-<header>
+<header id="mainheader">
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light white scrolling-navbar">
         <div class="container">
 
             <!-- Brand -->
-            <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
+            <a class="navbar-brand waves-effect" href="{{ route('home') }}">
                 <strong class="blue-text">MDB</strong>
             </a>
 
@@ -51,9 +51,10 @@
                     @else
 
                         <li class="nav-item">
-                            <a class="btn btn-default ro-co log-in-user" href="{{ route('myaccount') }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a class="btn btn-default ro-co log-in-user" href="{{ route('my-account') }}">
                                 Hello! <strong>{{ Auth::user()->name }} </strong>
                             </a>
+                           
                         </li>
 
                         <li class="nav-item">

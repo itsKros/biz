@@ -33,6 +33,9 @@
 <script type="text/javascript" src="{{asset('frontend/js/bootstrap.min.js')}}"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="{{asset('frontend/js/mdb.min.js')}}"></script>
+<!-- Custom JavaScript -->
+<script type="text/javascript" src="{{asset('frontend/js/scripts.js')}}"></script>
+
 <!-- Initializations -->
 <script type="text/javascript">
 // Animations initialization
