@@ -23,7 +23,7 @@ class ListingsController extends Controller
      */
     public function create()
     {
-        //
+        return view('frontend.createlist');
     }
 
     /**
@@ -56,7 +56,7 @@ class ListingsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('frontend.editlist');
     }
 
     /**
