@@ -17,7 +17,10 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                    
+                    {!! Form::open(['action' => 'ListingsController@store','method' => 'POST']) !!}
+                        //
+                    {!! Form::close() !!}
                     
                 </div>
             </div>

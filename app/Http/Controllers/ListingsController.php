@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class ListingsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +18,7 @@ class ListingsController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
