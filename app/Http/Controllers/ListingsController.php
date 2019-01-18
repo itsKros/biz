@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Listing;
 
 class ListingsController extends Controller
 {
@@ -39,7 +40,23 @@ class ListingsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'email'
+        ]);
+
+        //Create List
+        $listing = new Listing;
+        $listing->name = $request->input('name');
+        $listing->website = $request->input('website');
+        $listing->email = $request->input('email');
+        $listing->address = $request->input('website');
+        $listing->phone = $request->input('phone');
+        $listing->bio = $request->input('bio');
+        $listing->user_id = auth()->user()->id;
+        $listing->save();
+
+        return redirect('/my-account')->with('success', 'Listing Added');
     }
 
     /**
@@ -61,7 +78,8 @@ class ListingsController extends Controller
      */
     public function edit($id)
     {
-        return view('frontend.editlist');
+        $listing = Listing::find($id);
+        return view('frontend.editlist')->with('listing', $listing);
     }
 
     /**
@@ -73,7 +91,23 @@ class ListingsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'email'
+        ]);
+
+        //Create List
+        $listing = Listing::find($id);
+        $listing->name = $request->input('name');
+        $listing->website = $request->input('website');
+        $listing->email = $request->input('email');
+        $listing->address = $request->input('website');
+        $listing->phone = $request->input('phone');
+        $listing->bio = $request->input('bio');
+        $listing->user_id = auth()->user()->id;
+        $listing->save();
+
+        return redirect('/my-account')->with('success', 'Listing Updated');
     }
 
     /**

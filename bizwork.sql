@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 13, 2019 at 07:30 PM
+-- Generation Time: Jan 18, 2019 at 07:05 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -46,8 +46,9 @@ CREATE TABLE `listings` (
 --
 
 INSERT INTO `listings` (`id`, `user_id`, `name`, `address`, `website`, `email`, `phone`, `bio`, `created_at`, `updated_at`) VALUES
-(1, 2, 'Brian Creative Soft', '232  Russell Street, Framingham, MA', 'http://example.com', 'briancs@mail.com', '978-899-1433', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', NULL, NULL),
-(2, 3, 'Jon Solutions', '80 Ketch Harbour Ave. \r\nPark Ridge, IL 60068', 'http://example.org', 'jsolutions@mail.com', '202-555-0166', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', NULL, NULL);
+(1, 2, 'Brian Creative Soft', 'http://example.com', 'http://example.com', 'briancs@mail.com', '978-899-1433', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', NULL, '2019-01-18 12:24:47'),
+(2, 3, 'Jon Solutions', '80 Ketch Harbour Ave. \r\nPark Ridge, IL 60068', 'http://example.org', 'jsolutions@mail.com', '202-555-0166', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', NULL, NULL),
+(3, 2, 'SnapShot', 'www.snapshot.io', 'www.snapshot.io', 'info@snapshot.co', '5555555555', 'Lorem ipsum dolor set amet', '2019-01-18 12:06:33', '2019-01-18 12:06:33');
 
 -- --------------------------------------------------------
 
@@ -146,7 +147,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `listings`
 --
 ALTER TABLE `listings`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -158,7 +159,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
