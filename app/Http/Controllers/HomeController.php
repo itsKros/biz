@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Listing;
+
 class HomeController extends Controller
 {
    
@@ -16,7 +18,8 @@ class HomeController extends Controller
     
      public function index()
     {
-        return view('frontend.home');
+        $listings = Listing::orderBy('created_at', 'desc')->get();
+        return view('frontend.home')->with('listings', $listings);
     }
 
     public function myaccount()
