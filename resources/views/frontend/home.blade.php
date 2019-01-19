@@ -37,37 +37,43 @@
                 <!--Grid row-->
                 <div class="row mb-4 wow fadeIn">
 
-                    <!--Grid column-->
-                    <div class="col-lg-4 col-md-12 mb-4">
+                     @if(count($listings))
+                        @foreach($listings as $listing)
+                            <!--Grid column-->
+                            <div class="col-lg-4 col-md-12 mb-4">
+                                <!--Card-->
+                                <div class="card">
+                                    <div class="view overlay" style="display:none;">
+                                        <div class="embed-responsive embed-responsive-16by9 rounded-top">
+                                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cXTThxoywNQ" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
 
-                        <!--Card-->
-                        <div class="card">
-                            <div class="view overlay">
-                                <div class="embed-responsive embed-responsive-16by9 rounded-top">
-                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cXTThxoywNQ" allowfullscreen></iframe>
+                                    <div class="card-body">
+                                        <h4 class="card-title"><a href="/listings/{{$listing->id}}">{{$listing->name}}</a></h4>
+                                        <p class="card-text"><?php echo str_limit($listing->bio, 200); ?></p>
+                                        <p class="card-text">
+                                        <span class="sauthor float-left">by <strong>{{$listing->user->name}}</strong></span>
+                                        <a href="/listings/{{$listing->id}}" class="btn btn-primary btn-sm float-right">Read more</a>
+                                        </p>
+                                    </div>
                                 </div>
+                                <!--/.Card-->
                             </div>
+                            <!--Grid column-->
+                        @endforeach
+                        @else
+                            <p>No Listings</p>                        
+                    @endif
+                   
 
-                            <div class="card-body">
-                                <h4 class="card-title">MDB Quick Start</h4>
-                                <p class="card-text">Get started with MDBootstrap, the world's most popular Material Design framework for building
-                                    responsive, mobile-first sites.</p>
-                                <p class="card-text">
-                                    <strong>5 minutes, a few clicks and... done. You will be surprised at how easy it is.</strong>
-                                </p>
-                            </div>
-
-                        </div>
-                        <!--/.Card-->
-
-                    </div>
-                    <!--Grid column-->
+                    
                 
                 </div>
                 <!--Grid row-->
-
+ 
                 <!--Pagination-->
-                <nav class="d-flex justify-content-center wow fadeIn">
+                <nav class="d-flex justify-content-center wow fadeIn" style="display:none !important;">
                     <ul class="pagination pg-blue">
 
                         <!--Arrow left-->

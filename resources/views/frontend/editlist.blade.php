@@ -9,7 +9,7 @@
 
                 <div class="card-body">
                     
-                    
+               
                     {!! Form::open(['action' => ['ListingsController@update', $listing->id],'method' => 'POST']) !!}
                         {{Form::bsText('name',$listing->name,['placeholder' => 'Company Name'])}}
                         {{Form::bsText('website',$listing->website,['placeholder' => 'Website'])}}
