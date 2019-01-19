@@ -118,6 +118,9 @@ class ListingsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $listing = Listing::find($id);
+        $listing->delete();
+
+        return redirect('/my-account')->with('success', 'Listing Deleted');
     }
 }
