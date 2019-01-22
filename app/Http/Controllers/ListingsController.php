@@ -51,7 +51,7 @@ class ListingsController extends Controller
         $listing->name = $request->input('name');
         $listing->website = $request->input('website');
         $listing->email = $request->input('email');
-        $listing->address = $request->input('website');
+        $listing->address = $request->input('address');
         $listing->phone = $request->input('phone');
         $listing->bio = $request->input('bio');
         $listing->user_id = auth()->user()->id;
@@ -67,8 +67,9 @@ class ListingsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
+    {   
+        $listing = Listing::find($id);
+        return view('frontend.singlelist')->with('listing', $listing);
     }
 
     /**
@@ -102,7 +103,7 @@ class ListingsController extends Controller
         $listing->name = $request->input('name');
         $listing->website = $request->input('website');
         $listing->email = $request->input('email');
-        $listing->address = $request->input('website');
+        $listing->address = $request->input('address');
         $listing->phone = $request->input('phone');
         $listing->bio = $request->input('bio');
         $listing->user_id = auth()->user()->id;
