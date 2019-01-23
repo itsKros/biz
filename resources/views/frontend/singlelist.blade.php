@@ -8,7 +8,7 @@
                     <h2 class="blue-text">{{$listing->name}}</h2>
                     <small><em>by </em>{{$listing->user->name}}</small>
                     <hr/>
-                    <p>{{$listing->bio}}</p>
+                    <p>{!!$listing->bio!!}</p>
                 </div>
             </div>
         </div>

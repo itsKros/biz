@@ -41,6 +41,9 @@
 // Animations initialization
 new WOW().init();
 </script>
-</body>
 
+<!-- WYSIWYG Editor  -->
+<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+    @yield('js')
+</body>
 </html>

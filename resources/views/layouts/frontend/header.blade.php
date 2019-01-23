@@ -7,7 +7,7 @@
 
             <!-- Brand -->
             <a class="navbar-brand waves-effect" href="{{ route('home') }}">
-                <strong class="blue-text">MDB</strong>
+            Biz <strong class="blue-text">Work</strong>
             </a>
 
             <!-- Collapse -->

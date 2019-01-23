@@ -16,7 +16,7 @@
                         {{Form::bsText('email','',['placeholder' => 'Contact Email'])}}
                         {{Form::bsText('phone','',['placeholder' => 'Contact Phone'])}}
                         {{Form::bsText('address','',['placeholder' => 'Business Address'])}}
-                        {{Form::bsTextArea('bio','',['placeholder' => 'About This Business'])}}
+                        {{Form::bsTextArea('bio','',['id' => 'teditor', 'placeholder' => 'About This Business'])}}
                         {{Form::bsSubmit('submit','Submit',['class' => 'btn btn-primary'])}}
                     {!! Form::close() !!}
                     
@@ -25,4 +25,11 @@
         </div>
     </div>
 </div>
+@endsection
+
+
+@section('js')
+<script>
+     CKEDITOR.replace( 'teditor' );
+</script>
 @endsection
