@@ -98,7 +98,7 @@ class ListingsController extends Controller
             'email' => 'email'
         ]);
 
-        //Create List
+        //Update List
         $listing = Listing::find($id);
         $listing->name = $request->input('name');
         $listing->website = $request->input('website');
