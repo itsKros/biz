@@ -6,14 +6,16 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"><span>My Listings</span> <?php 
-                    if( count($listings) == 3 ){
-    
-                        echo "<span class=\"float-right\">You can't add more listing <a href=\"#\" class=\"btn btn-success btn-sm\">Buy Subscription</a></span>";
+                <div class="card-header"><span>My Listings</span> 
+                    
+                    @if( count($listings) == 3 && auth()->user()->isSubscribed == 0 )
+                        <span class="float-right">You can not add more listing <a href="#" class="btn btn-success btn-sm">Buy Subscription</a></span>
                         
-                    } else {
-                        echo "<span class=\"float-right\"><a href=\"/listings/create\" class=\"btn btn-success btn-sm\">Add Listing</a></span>";
-                    }?></div>
+                    @elseif(auth()->user()->isSubscribed == 1 || auth()->user()->isSubscribed == 0 && count($listings) < 3)
+                        <span class="float-right"><a href="/listings/create" class="btn btn-success btn-sm">Add Listing</a></span>
+                    @endif
+                
+                </div>
                 
                 <div class="card-body">
                     @if (session('status'))

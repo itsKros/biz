@@ -12,6 +12,7 @@ class ListingsController extends Controller
     public function __construct()
     {
         $this->middleware('auth')->except('show');
+        $this->middleware('subcheck')->only('create');
     }
     /**
      * Display a listing of the resource.
@@ -125,4 +126,7 @@ class ListingsController extends Controller
 
         return redirect('/my-account')->with('success', 'Listing Deleted');
     }
+
+
+    
 }

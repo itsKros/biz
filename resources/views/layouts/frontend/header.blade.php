@@ -1,3 +1,9 @@
+<?php
+
+$getroutname = Route::currentRouteName();
+
+?>
+
 <!--Main Navigation-->
 <header id="mainheader">
 
@@ -21,19 +27,13 @@
 
                 <!-- Left -->
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link waves-effect" href="#">Home
+                    <li class="nav-item {{($getroutname === 'home')? 'active' : '' }}">
+                        <a class="nav-link waves-effect" href="{{ route('home') }}">Home
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link waves-effect" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link waves-effect" href="#">Biz</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link waves-effect" href="#">Contact</a>
+                    <li class="nav-item {{($getroutname === 'pricing')? 'active' : '' }}">
+                        <a class="nav-link waves-effect" href="{{ route('pricing') }}">Pricing</a>
                     </li>
                 </ul>
 

@@ -27,8 +27,14 @@ class HomeController extends Controller
     {
         $user_id = auth()->user()->id;
         $user = User::find($user_id);
-        
         return view('frontend.myaccount')->with('listings', $user->listings);
+    }
+
+    public function pricing()
+    {
+        $user_id = auth()->user()->id;
+        $user = User::find($user_id);
+        return view('frontend.pricing')->with('user', $user);
     }
 
     

@@ -14,6 +14,8 @@
 
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/pricing', 'HomeController@pricing')->name('pricing');
+// /Route::post('/subscribe/{{status}}', 'Subscription@subscribe')->name('subscribe');
 
 Auth::routes();
 Route::resource('listings','ListingsController');
